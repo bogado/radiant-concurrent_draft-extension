@@ -71,3 +71,5 @@
 #draft-controls .cancel a { background-image: url(/images/admin/cancel.png);}
 #draft-controls .revert a { background-image: url(/images/admin/page_refresh.png);}
 #draft-controls .unpublish a { background-image: url(/images/admin/page_delete.png);}
+
+.promote { background-color: #0ff; }
