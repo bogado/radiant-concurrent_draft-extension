@@ -11,5 +11,14 @@ module ConcurrentDraft::PageExtensions
     update_attributes('published_at' => nil, 'status_id' => Status[:draft].id)
     super
   end
-  
+
+  def needs_promotion?
+    parts.each do |part|
+      if part.needs_promotion? then
+        return true
+      end
+
+	  return false
+    end
+  end
 end

@@ -53,5 +53,16 @@ module ConcurrentDraft::ModelExtensions
   def publishable?
     has_attribute?("published_at") && has_attribute?("status_id")
   end
-  
+
+  def needs_promotion?
+    if !respond_to?(:content) && !respond_to?(:draft_content) then
+	  raise "Should not be called in a object that do not respond to content and draft_content"
+	end
+
+	if content != draft_content then
+      true
+	else
+	  false
+	end
+  end
 end
